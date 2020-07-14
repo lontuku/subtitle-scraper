@@ -1,0 +1,26 @@
+<h1>Ingresa el nombre del archivo para buscar subtítulos</h1>
+
+
+
+<%#= render './searches/form', search: @search %>
+<br>
+<%#= link_to 'Back', root_path %>
+<div id="answer">
+    <form>
+    <div class="form-group">
+        <input type="file" id="name" class="form-control-file">
+    </div>
+    </form>
+
+</div>
+<br>
+<br>
+<h1> Últimas búsquedas ... <%#= Search.last.name %> </h1>
+<ul id="lista">
+    <% @searches.reverse_each.with_index do |ele,i| %>
+        <% if i < 5 %>
+        <li><%= ele.name %></li>
+        <% end %>
+    <%end %>
+</ul>
+
