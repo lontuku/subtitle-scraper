@@ -62,7 +62,6 @@ def scraping(data)
 	h = {}
 	p "http://www.subdivx.com/index.php?q=#{data}&accion=5&masdesc=&subtitulos=1&realiza_b=1"
 	html = open("http://www.subdivx.com/index.php?q=#{data}&accion=5&masdesc=&subtitulos=1&realiza_b=1")
-	s = "rick.and.morty.s04e09.1080p.webrip.x264-hola"
 	#crea un objeto tipo Nokogiri HTML con la info de la web.
 	doc = Nokogiri::HTML(html)
 	links = {}
