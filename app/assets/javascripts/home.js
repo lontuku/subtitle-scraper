@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const name = document.getElementById('name')
-    const loading = document.getElementsByTagName('h1')[0]
+    var name = document.getElementById('name')
+    var loading = document.getElementsByTagName('h1')[0]
     name.addEventListener('input', update)
     function update(n) {
         
