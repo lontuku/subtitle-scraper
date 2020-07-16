@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         </table>`
                 answer.innerHTML = table
             }
-                answer.innerHTML += '<a class= "btn btn-info" href="http://localhost:3000/">Regresar</a>'
+                answer.innerHTML += '<a class= "btn btn-info" href="https://whispering-plains-51052.herokuapp.com/">Regresar</a>'
             })
             .then((response) => {
                 //location.reload()
