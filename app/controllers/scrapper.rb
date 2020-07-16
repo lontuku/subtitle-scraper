@@ -134,16 +134,8 @@ def calling(str)
 	final_data = hash_creator(data[:keys], info)
 	quant = final_data.length
 	puts "Se encontaron #{quant} en total."
-	order = final_data.sort_by {|hash| - hash[:percentage]}
-
-	order.each do |h|
-		puts "Subtítulo Nº #{h[:i]} se acerca en un #{h[:percentage]}% y ha sido descargado #{h[:downloads]} veces."
-		if quant > 0
-			puts "El link de descarga es #{h[:links]}."
-		end
-		puts '-----------------------------------------------------------------------------------------------------------'
-	end
-    
+	order = final_data.sort_by {|hash| [-hash[:percentage], -hash[:downloads]]}
+	final_hash = {name: data[:title].capitalize() , ans: order, searchkeys: data[:keys] }
 end
 
 def queControlador(str)
