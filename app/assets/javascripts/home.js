@@ -2,12 +2,35 @@ document.addEventListener('DOMContentLoaded', function () {
     var name = document.getElementById('name')
     var loading = document.getElementsByTagName('h1')[0]
     name.addEventListener('input', update)
+
+            var dropzone = document.getElementById('dropzone')
+
+            dropzone.ondrop = function (e) {
+                e.preventDefault()
+                this.className = 'dropzone'
+                update(e.dataTransfer.files[0].name)
+            }
+
+            dropzone.ondragover = function () {
+                this.className = 'dropzone dragover'
+                return false
+            }
+
+            dropzone.ondragleave = function () {
+                this.className = 'dropzone'
+                return false
+            }
+
     function update(n) {
         
-        
-        var dataName = name.files[0].name
+        if (name.files[0] != null){
+            var dataName = name.files[0].name
+        }
+        else {
+            var dataName = n
+        }
         loading.innerHTML = `BUSCANDO...${dataName}`
-        var url = 'https://whispering-plains-51052.herokuapp.com/hola'
+        var url = 'http://localhost:3000/hola'
        
         var data = { name: `${dataName}` }
         
@@ -31,7 +54,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 ele.append(document.createTextNode(response.name))
                 list.prepend(ele)
                 if (response.ans.length == 0){
-                    answer.innerHTML = 'No fue posible encontrar subtítulos'
+                    loading.innerHTML = 'No fue posible encontrar subtítulos'
+                    answer.innerHTML = ''
 
                 }
                 else {
@@ -63,7 +87,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         </table>`
                 answer.innerHTML = table
             }
-                answer.innerHTML += '<a class= "btn btn-info" href="https://whispering-plains-51052.herokuapp.com/">Regresar</a>'
+                answer.innerHTML += '<button class="btn btn-info" onclick="location.reload()">Regresar</button>'
+
             })
             .then((response) => {
                 //location.reload()
