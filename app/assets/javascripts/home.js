@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
         var dataName = name.files[0].name
         loading.innerHTML = `BUSCANDO...${dataName}`
-        var url = 'http://localhost:3000/hola'
+        var url = 'https://whispering-plains-51052.herokuapp.com/hola'
        
         var data = { name: `${dataName}` }
         
