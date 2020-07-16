@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 ele.append(document.createTextNode(response.name))
                 list.prepend(ele)
                 if (response.ans.length == 0){
-                    loading.innerHTML = 'No fue posible encontrar subtítulos'
+                    answer.innerHTML = 'No fue posible encontrar subtítulos'
 
                 }
                 else {
