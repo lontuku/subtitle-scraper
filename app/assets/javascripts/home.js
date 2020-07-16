@@ -3,23 +3,23 @@ document.addEventListener('DOMContentLoaded', function () {
     var loading = document.getElementsByTagName('h1')[0]
     name.addEventListener('input', update)
 
-            var dropzone = document.getElementById('dropzone')
+    var dropzone = document.getElementById('dropzone')
 
-            dropzone.ondrop = function (e) {
-                e.preventDefault()
-                this.className = 'dropzone'
-                update(e.dataTransfer.files[0].name)
-            }
+    dropzone.ondrop = function (e) {
+        e.preventDefault()
+        this.className = 'dropzone'
+        update(e.dataTransfer.files[0].name)
+    }
 
-            dropzone.ondragover = function () {
-                this.className = 'dropzone dragover'
-                return false
-            }
+    dropzone.ondragover = function () {
+        this.className = 'dropzone dragover'
+        return false
+    }
 
-            dropzone.ondragleave = function () {
-                this.className = 'dropzone'
-                return false
-            }
+    dropzone.ondragleave = function () {
+        this.className = 'dropzone'
+        return false
+    }
 
     function update(n) {
         
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
             var dataName = n
         }
         loading.innerHTML = `BUSCANDO...${dataName}`
-        var url = 'http://localhost:3000/hola'
+        var url = 'https://whispering-plains-51052.herokuapp.com/hola'
        
         var data = { name: `${dataName}` }
         
