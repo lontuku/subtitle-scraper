@@ -1,24 +1,28 @@
-# README
+# SubScraper
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Es una aplicación Rails que permite scrapear subtítulos en español.
 
-Things you may want to cover:
+Puedes visitar la versión online en [SubScraper](https://whispering-plains-51052.herokuapp.com/)
 
-* Ruby version
 
-* System dependencies
+### Requisitos
 
-* Configuration
+Los requisitos mínimos para ejecutar el proyecto son
 
-* Database creation
+- Ruby 2.6.3
+- Rails 5.2.4
+  
+### 1. Descargar repositorio
 
-* Database initialization
+```bash
+git clone git@github.com:lontuku/subtitle-scraper.git
+```
 
-* How to run the test suite
+### 2. Bundle y Levantar el servidor
 
-* Services (job queues, cache servers, search engines, etc.)
+```ruby
+bundle install
+rails s
+```
 
-* Deployment instructions
-
-* ...
+Acceder al sitio en http://localhost:3000
