@@ -1,9 +1,12 @@
 module Saludos
 
-    def saludo(str)
-        puts "###########################################"
-        puts str
-        puts "###########################################"
+    class Saludando
+        def self.saludo(str)
+            puts "###########################################"
+            puts str
+            puts "###########################################"
+        end
     end
+    
 
 end

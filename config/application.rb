@@ -10,6 +10,10 @@ module SubScraper
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
+    #config.autoload_paths << "#{Rails.root}/lib"
+    #config.autoload_paths << Rails.root.join('lib')   
+    Dir[File.join(Rails.root, "lib", "ext", "*.rb")].each {|l| require l }
+    # Autoload lib directory     config.autoload_paths << Rails.root.join('lib')     Dir[File.join(Rails.root, "lib", "ext", "*.rb")].each {|l| require l }
     #carga modulos guardados en lib.
     #config.eager_load_paths += %W(#{config.root}/lib)
     # Settings in config/environments/* take precedence over those specified here.

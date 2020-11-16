@@ -30,8 +30,9 @@ document.addEventListener('DOMContentLoaded', function () {
             var dataName = n
         }
         loading.innerHTML = `BUSCANDO...${dataName}`
-        var url = 'https://whispering-plains-51052.herokuapp.com/hola'
-       
+        var url = '/hola'
+        
+        
         var data = { name: `${dataName}` }
         
         fetch(url, {

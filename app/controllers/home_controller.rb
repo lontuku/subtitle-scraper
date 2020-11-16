@@ -2,6 +2,7 @@ class HomeController < ApplicationController
   require 'scrapper.rb'
 
   def index
+    ::Saludos::Saludando.saludo('Probando codigo externo')
     @search = Search.new
     @searches = Search.all
     if params[:name] != nil
